@@ -7,7 +7,6 @@ import { useCountryNavigation } from "@/app/hooks/use-country-navigation";
 import { useModalNavigation } from "@/app/hooks/use-modal-navigation";
 import { CountryGrid } from "@/app/components/country-grid";
 import { RegionFilter } from "@/app/components/region-filter";
-import { Navbar } from "@/app/components/navbar";
 import CountryModal from "@/app/components/country-modal";
 import Footer from "@/app/components/footer";
 
@@ -58,13 +57,10 @@ const CountryList = () => {
 
     return (
         <div className="h-screen overflow-hidden bg-gradient-to-b from-gray-50 to-white flex flex-col">
-            <div className="sticky top-0 z-30">
-                <Navbar />
-            </div>
-            <main className="flex-1 overflow-y-auto -mt-20 pt-20">
+            <main className="flex-1 overflow-y-auto">
                 <div className="container mx-auto px-4 py-4">
                     <div className="relative">
-                        <div className="sticky top-0 z-20 mb-3">
+                        <div className="sticky top-16 z-20">
                             <div className="bg-gradient-to-r from-emerald-500/20 via-violet-500/20 to-rose-500/20 rounded-xl p-[1px]">
                                 <div className="bg-white/20 backdrop-blur-sm rounded-[10px] p-2">
                                     <RegionFilter
@@ -77,7 +73,7 @@ const CountryList = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="pt-3">
+                        <div className="mt-16">
                             <CountryGrid
                                 countries={filteredCountries}
                                 onSelect={handleSelect}
