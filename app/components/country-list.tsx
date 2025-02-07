@@ -64,9 +64,9 @@ const CountryList = () => {
             <main className="flex-1 overflow-y-auto -mt-20 pt-20">
                 <div className="container mx-auto px-4 py-4">
                     <div className="relative">
-                        <div className="sticky top-0 z-20">
-                            <div className="bg-white/60 backdrop-blur-lg rounded-xl p-[1px] shadow-sm bg-gradient-to-r from-emerald-500 via-violet-500 to-rose-500">
-                                <div className="bg-white/40 backdrop-blur-xl rounded-[10px] p-2">
+                        <div className="sticky top-0 z-20 mb-3">
+                            <div className="bg-gradient-to-r from-emerald-500/20 via-violet-500/20 to-rose-500/20 rounded-xl p-[1px]">
+                                <div className="bg-white/20 backdrop-blur-sm rounded-[10px] p-2">
                                     <RegionFilter
                                         regions={regions}
                                         selectedRegions={selectedRegions}
