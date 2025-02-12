@@ -11,6 +11,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Capital Quest",
   description: "Explore capitals of the world",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
 };
 
 export default function RootLayout({
@@ -20,9 +24,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-      </head>
       <body className={`${inter.className} min-h-screen bg-gray-50 overflow-hidden`}>
         <Navbar />
         {children}
