@@ -41,7 +41,10 @@ export default function Card({ country, index, onClick }: CardProps) {
       aria-label={`${country.name}${country.capitalCity ? `, capital: ${country.capitalCity}` : ''}, ${region} region`}
     >
       {/* show region color at top */}
-      <div className={`h-1.5 w-full bg-gradient-to-r ${colors.gradient}`} />
+      <div 
+        className={`h-1.5 w-full bg-gradient-to-r ${colors.gradient}`}
+        aria-hidden="true"
+      />
 
       {/* card content */}
       <div className="p-4">

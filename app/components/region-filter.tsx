@@ -35,6 +35,8 @@ export const RegionFilter = ({
                                         ? `${regionColors[region]?.bg} text-white`
                                         : `bg-white/50 text-gray-600 ${regionColors[region]?.border || 'border-gray-200'} hover:${regionColors[region]?.hover || 'hover:bg-gray-100'}`
                                 }`}
+                                aria-pressed={selectedRegions.has(region)}
+                                aria-label={`${region} region toggle button`}
                             >
                                 {region}
                             </button>
