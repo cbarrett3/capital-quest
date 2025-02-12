@@ -61,6 +61,7 @@ const CountryList = () => {
                 <div className="container mx-auto px-4 py-4">
                     <div className="relative">
                         <div className="sticky top-16 z-20">
+                            <h2 className="sr-only">Countries</h2>
                             <div className="bg-gradient-to-r from-emerald-500/20 via-violet-500/20 to-rose-500/20 rounded-xl p-[1px]">
                                 <div className="bg-white/20 backdrop-blur-sm rounded-[10px] p-2">
                                     <RegionFilter

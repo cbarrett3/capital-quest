@@ -22,9 +22,9 @@ const InfoSection = ({ title, value, gradient }: {
   gradient: string 
 }) => (
   <div className="flex flex-col gap-0.5">
-    <h4 className={`text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r ${gradient}`}>
+    <h3 className={`text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r ${gradient}`}>
       {title}
-    </h4>
+    </h3>
     <p className="text-gray-800 text-sm">{value}</p>
   </div>
 )
