@@ -92,6 +92,12 @@ const CountryModal = ({
 
   return (
     <AnimatePresence>
+      <div 
+        aria-live="assertive"
+        className="sr-only"
+      >
+        {country.name}. Capital: {country.capitalCity || 'capital unknown'}. {region} region.
+      </div>
       <motion.div 
         className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 flex items-center justify-center px-14 sm:px-20"
         initial={{ opacity: 0 }}
