@@ -29,14 +29,15 @@ export default function Card({ country, index, onClick }: CardProps) {
   };
 
   return (
-    <motion.div
+    <motion.button
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
       onClick={onClick}
-      className="group relative bg-white rounded-xl shadow-sm border border-gray-200 
-               overflow-hidden cursor-pointer transition-all duration-300
-               hover:shadow-lg hover:-translate-y-1"
+      className={`group relative bg-white rounded-xl shadow-sm border border-gray-200 
+               overflow-hidden cursor-pointer transition-all duration-300 w-full text-left
+               hover:shadow-lg hover:-translate-y-1
+               focus:outline-none focus:ring-2 focus:ring-offset-2 ${colors.ring}`}
     >
       {/* show region color at top */}
       <div className={`h-1.5 w-full bg-gradient-to-r ${colors.gradient}`} />
@@ -68,6 +69,6 @@ export default function Card({ country, index, onClick }: CardProps) {
       <div className="absolute inset-0 -translate-x-full group-hover:animate-shimmer
                     bg-gradient-to-r from-transparent via-white/10 to-transparent
                     pointer-events-none" />
-    </motion.div>
+    </motion.button>
   );
 }
