@@ -57,7 +57,7 @@ const CountryList = () => {
 
     return (
         <div className="h-screen overflow-hidden bg-gradient-to-b from-gray-50 to-white flex flex-col">
-            <main className="flex-1 overflow-y-auto">
+            <div className="flex-1 overflow-y-auto">
                 <div className="container mx-auto px-4 py-4">
                     <div className="relative">
                         <div className="sticky top-16 z-20">
@@ -81,7 +81,7 @@ const CountryList = () => {
                         </div>
                     </div>
                 </div>
-            </main>
+            </div>
             <Footer />
             {/* error modal outside animate presence for instant removal */}
             {detailsError && (
