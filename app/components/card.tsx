@@ -38,6 +38,7 @@ export default function Card({ country, index, onClick }: CardProps) {
                overflow-hidden cursor-pointer transition-all duration-300 w-full text-left
                hover:shadow-lg hover:-translate-y-1
                focus:outline-none focus:ring-2 focus:ring-offset-2 ${colors.ring}`}
+      aria-label={`${country.name}${country.capitalCity ? `, capital: ${country.capitalCity}` : ''}, ${region} region`}
     >
       {/* show region color at top */}
       <div className={`h-1.5 w-full bg-gradient-to-r ${colors.gradient}`} />
