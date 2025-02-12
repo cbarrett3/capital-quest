@@ -35,7 +35,8 @@ describe('CountryModal', () => {
 
         // check if details are shown
         expect(screen.getByText('United States')).toBeInTheDocument();
-        expect(screen.getByText('Washington D.C.')).toBeInTheDocument();
+        const modalDescription = screen.getByRole('dialog').querySelector('#modal-description');
+        expect(modalDescription).toHaveTextContent('Capital: Washington D.C.');
         expect(screen.getByText('North America')).toBeInTheDocument();
         expect(screen.getByText('High income')).toBeInTheDocument();
         expect(screen.getByText('IBRD')).toBeInTheDocument();
@@ -72,8 +73,8 @@ describe('CountryModal', () => {
         );
 
         // check if navigation buttons are present
-        const prevButton = screen.getByLabelText('previous country');
-        const nextButton = screen.getByLabelText('next country');
+        const prevButton = screen.getByRole('button', { name: 'View previous country' });
+        const nextButton = screen.getByRole('button', { name: 'View next country' });
         
         expect(prevButton).toBeInTheDocument();
         expect(nextButton).toBeInTheDocument();
@@ -99,8 +100,8 @@ describe('CountryModal', () => {
         );
 
         // check if navigation buttons are hidden
-        expect(screen.queryByLabelText('previous country')).not.toBeInTheDocument();
-        expect(screen.queryByLabelText('next country')).not.toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: 'View previous country' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: 'View next country' })).not.toBeInTheDocument();
     });
 
     it('handles navigation buttons', () => {
@@ -116,10 +117,10 @@ describe('CountryModal', () => {
         );
 
         // test navigation
-        fireEvent.click(screen.getByLabelText('next country'));
+        fireEvent.click(screen.getByRole('button', { name: 'View next country' }));
         expect(handleNext).toHaveBeenCalled();
 
-        fireEvent.click(screen.getByLabelText('previous country'));
+        fireEvent.click(screen.getByRole('button', { name: 'View previous country' }));
         expect(handlePrevious).toHaveBeenCalled();
     });
 });

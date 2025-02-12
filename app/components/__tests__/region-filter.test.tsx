@@ -26,7 +26,7 @@ describe('RegionFilter', () => {
 
         // check if all regions are shown
         mockRegions.forEach(region => {
-            expect(screen.getByRole('button', { name: region })).toBeInTheDocument();
+            expect(screen.getByRole('button', { name: `${region} region toggle button` })).toBeInTheDocument();
         });
     });
 
@@ -42,7 +42,7 @@ describe('RegionFilter', () => {
         );
 
         // click a region button
-        fireEvent.click(screen.getByRole('button', { name: 'East Asia & Pacific' }));
+        fireEvent.click(screen.getByRole('button', { name: 'East Asia & Pacific region toggle button' }));
         expect(handleToggle).toHaveBeenCalledWith('East Asia & Pacific');
     });
 });
